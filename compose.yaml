@@ -1,0 +1,15 @@
+services:
+  firstdraft:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      PORT: "8000"
+      FIRSTDRAFT_HOST: "0.0.0.0"
+      FIRSTDRAFT_PUBLIC_ORIGIN: "http://localhost:8000"
+      FIRSTDRAFT_ACCOUNT_DATABASE: "/data/firstdraft-accounts.sqlite3"
+    volumes:
+      - firstdraft_data:/data
+
+volumes:
+  firstdraft_data:
